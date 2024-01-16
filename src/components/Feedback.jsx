@@ -10,14 +10,15 @@ const Feedback = ({feedback, onFeedbackChange}) => {
     return good + neutral + bad;
   };
   const countPositiveFeedbackPercentage = () => {
-    const { good, neutral, bad } = feedback;
+    const { good } = feedback; 
     const total = countTotalFeedback();
-
+  
     if (total === 0) {
       return 0;
     }
     return Math.floor((good / total) * 100);
   };
+  
   const totalFeedback = countTotalFeedback();
 
   return (
